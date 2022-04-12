@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>BookDucks</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,10 +18,10 @@
       <h1>BookDucks</h1>
       <ul class="main-menu">
         <li>
-          <a href="index.html" class="nav-link">Startsida</a>
+          <a href="index.html" class="nav-link active">Startsida</a>
         </li>
         <li>
-          <a href="login.html" class="nav-link">Logga in</a>
+          <a href="login.html" class="nav-link show">Logga in</a>
         </li>
         <li>
           <a href="register.html" class="nav-link">Registrera dig</a>
@@ -28,9 +34,9 @@
         </li>
       </ul>
     </header>
-    <button class="bookBtn">Show books</button>
-    <button class="audioBookBtn">Show audiobooks</button>
-    <button class="allBooks">Show all</button>
+    <button class="bookBtn">Visa böcker</button>
+    <button class="audioBookBtn">Visa ljudböcker</button>
+    <button class="allBooks">Visa allt</button>
     <div class="books"></div>
     <div class="audiobooks"></div>
     <script src="main.js"></script>

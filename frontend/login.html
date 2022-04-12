@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>Log in</title>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,16 +20,19 @@
                 <a href="index.html" class="nav-link">Startsida</a>
               </li>
           <li>
-            <a href="login.html" class="nav-link active">Logga in</a>
+            <a href="login.html" class="nav-link login hide">Logga in</a>
           </li>
           <li>
-            <a href="register.html" class="nav-link">Registrera dig</a>
+            <a href="register.html" class="nav-link hide">Registrera dig</a>
           </li>
           <li>
             <a href="publish.html" class="nav-link hidden">Publicera en bok</a>
           </li>
           <li>
             <a href="myPage.html" class="nav-link hidden">Min sida</a>
+          </li>
+          <li>
+            <a href="logout.html" class="nav-link hidden">Logga ut</a>
           </li>
         </ul>
       </header>
@@ -52,11 +61,12 @@
               />
           </div>
           <div class="form-footer">
-            <input type="submit" value="Logga in" class="btn btn--yellow" />
+            <button class="loginBtn">Logga in</button>
             <div class="login_linksContainer">
               <a href="register.html">Skapa Konto</a>
             </div>
           </div>
         </form>
+        <script src="login.js"></script>
 </body>
 </html>

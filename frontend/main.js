@@ -1,5 +1,7 @@
 "use strict";
 
+//homepage
+
 const bookBtn = document.querySelector(".bookBtn");
 const audioBookBtn = document.querySelector(".audioBookBtn");
 const allBooks = document.querySelector(".allBooks");
@@ -79,3 +81,7 @@ const getAudioBooks = async () => {
   const data = await response.json();
   return data;
 };
+
+//login
+
+//register

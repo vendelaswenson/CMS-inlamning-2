@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>Register</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -14,10 +20,12 @@
           <a href="index.html" class="nav-link">Startsida</a>
         </li>
         <li>
-          <a href="login.html" class="nav-link">Logga in</a>
+          <a href="login.html" class="nav-link hide">Logga in</a>
         </li>
         <li>
-          <a href="register.html" class="nav-link active">Registrera dig</a>
+          <a href="register.html" class="nav-link active hide"
+            >Registrera dig</a
+          >
         </li>
         <li>
           <a href="publish.html" class="nav-link hidden">Publicera en bok</a>
@@ -31,86 +39,42 @@
       <form id="registration-form">
         <h1>Skapa användare</h1>
         <div class="input-div">
-          <div class="form-group-1">
-            <div class="form-group">
-              <label for="username">Full Name</label>
-              <input
-                type="text"
-                id="username"
-                placeholder="Användarnamn"
-                name="name"
-                required
-                minlength="3"
-                maxlength="100"
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="email@address.com"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="location">Ort</label>
-              <input type="text" id="location" placeholder="Ort" required />
-            </div>
-            <div class="form-group">
-              <label for="zip-code">Postnummer</label>
-              <input
-                type="text"
-                id="zip-code"
-                placeholder="Postnummer"
-                pattern="[0-9]*"
-                required
-              />
-            </div>
+          <div class="form-group">
+            <label for="username">Användarnamn</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Användarnamn"
+              name="name"
+              required
+              minlength="3"
+              maxlength="100"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="email@address.com"
+              required
+            />
           </div>
           <div class="form-group-2">
             <div class="form-group">
-              <label for="password1">Password</label>
+              <label for="password">Lösenord</label>
               <input
                 type="password"
-                id="password1"
-                placeholder="Lösenord(Min. 8 characters)"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="password2">Confirm Password</label>
-              <input
-                type="password"
-                id="password2"
-                placeholder="Confirm Password"
-                name="password"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="street-adress">Gatuadress</label>
-              <input
-                type="text"
-                id="street-adress"
-                placeholder="Gatuadress"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="phone-number">Telefonnummer</label>
-              <input
-                type="tel"
-                id="phone-number"
-                placeholder="Telefonnummer"
-                name="phone"
+                id="password"
+                placeholder="Lösenord(Min. 8 tecken)"
                 required
               />
             </div>
           </div>
         </div>
-        <button type="submit" class="btn">Registrera</button>
+        <button class="registerBtn">Registrera</button>
       </form>
     </main>
+    <script src="register.js"></script>
   </body>
 </html>
