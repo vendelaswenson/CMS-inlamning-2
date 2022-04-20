@@ -48,6 +48,9 @@
       "relation": "manyToOne",
       "target": "api::genre.genre",
       "inversedBy": "books"
+    },
+    "userId": {
+      "type": "integer"
     }
   }
 }

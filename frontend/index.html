@@ -16,29 +16,79 @@
   <body>
     <header class="header">
       <h1>BookDucks</h1>
-      <ul class="main-menu">
-        <li>
-          <a href="index.html" class="nav-link active">Startsida</a>
-        </li>
-        <li>
-          <a href="login.html" class="nav-link show">Logga in</a>
-        </li>
-        <li>
-          <a href="register.html" class="nav-link">Registrera dig</a>
-        </li>
-        <li>
-          <a href="publish.html" class="nav-link hidden">Publicera en bok</a>
-        </li>
-        <li>
-          <a href="myPage.html" class="nav-link hidden">Min sida</a>
-        </li>
-      </ul>
+      <div class="linkWrapper">
+        <ul class="main-menu">
+          <li>
+            <a
+              href="index.html"
+              class="nav-link active"
+              style="text-decoration: none"
+              >Startsida</a
+            >
+          </li>
+          <li>
+            <a
+              href="login.html"
+              class="nav-link hide"
+              style="text-decoration: none"
+              >Logga in</a
+            >
+          </li>
+          <li>
+            <a
+              href="register.html"
+              class="nav-link hide"
+              style="text-decoration: none"
+              >Registrera dig</a
+            >
+          </li>
+          <li>
+            <a
+              href="publish.html"
+              class="nav-link hidden"
+              style="text-decoration: none"
+              >Publicera en bok</a
+            >
+          </li>
+          <li>
+            <a
+              href="myPage.html"
+              class="nav-link hidden"
+              style="text-decoration: none"
+              >Min sida</a
+            >
+          </li>
+          <li>
+            <a
+              href="index.html"
+              class="nav-link hidden logout"
+              style="text-decoration: none"
+              >Logga ut</a
+            >
+          </li>
+        </ul>
+      </div>
+      <img
+        class="headerImg"
+        src="https://bibliotek.salem.se/documents/6488666/6488874/books-1680953_1920+%281%29.jpg/47d63a3b-77d5-ee9b-9556-96936015dc2d?t=1616079410768"
+        alt="Books"
+      />
     </header>
-    <button class="bookBtn">Visa böcker</button>
-    <button class="audioBookBtn">Visa ljudböcker</button>
-    <button class="allBooks">Visa allt</button>
-    <div class="books"></div>
-    <div class="audiobooks"></div>
+    <div class="btnWrapper">
+      <button class="bookBtn buttons">Visa böcker</button>
+      <button class="audioBookBtn buttons">Visa ljudböcker</button>
+      <button class="allBooks buttons">Visa allt</button>
+    </div>
+
+    <div class="bookWrapper">
+      <div class="books"></div>
+    </div>
+
+    <div class="audioBookWrapper">
+      <div class="audiobooks"></div>
+    </div>
+
     <script src="main.js"></script>
+    <script src="logout.js"></script>
   </body>
 </html>

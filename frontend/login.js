@@ -1,3 +1,5 @@
+"use strict";
+
 const formLogin = document.querySelector("#login_form");
 const loginBtn = document.querySelector(".loginBtn");
 
@@ -8,12 +10,18 @@ loginBtn.addEventListener("click", async (e) => {
   const hiddenObj = document.querySelectorAll(".hidden");
   const loginText = document.querySelectorAll(".hide");
 
-  let loginUser = await axios.post("http://localhost:1337/api/auth/local", {
-    identifier: userEmail,
-    password: userPassword,
-  });
-  let token = loginUser.data.jwt;
-  sessionStorage.setItem("Token", token);
+  try {
+    let loginUser = await axios.post("http://localhost:1337/api/auth/local", {
+      identifier: userEmail,
+      password: userPassword,
+    });
+
+    let token = loginUser.data.jwt;
+    sessionStorage.setItem("Token", token);
+    window.location.href = "./index.html";
+  } catch {
+    alert("Det finns ingen användare med detta inlogg!");
+  }
 
   hiddenObj.forEach((obj) => {
     obj.classList.remove("hidden");

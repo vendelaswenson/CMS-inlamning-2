@@ -1,12 +1,36 @@
 "use strict";
 
 //homepage
-
 const bookBtn = document.querySelector(".bookBtn");
 const audioBookBtn = document.querySelector(".audioBookBtn");
 const allBooks = document.querySelector(".allBooks");
 const printBooks = document.querySelector(".books");
 const printAudioBooks = document.querySelector(".audiobooks");
+const hiddenObj = document.querySelectorAll(".hidden");
+const loginText = document.querySelectorAll(".hide");
+
+const displayLinks = () => {
+  let loggedIn = sessionStorage.getItem("Token");
+  if (loggedIn) {
+    hiddenObj.forEach((obj) => {
+      obj.classList.remove("hidden");
+    });
+
+    loginText.forEach((e) => {
+      e.classList.add("hidden");
+    });
+  } else {
+    hiddenObj.forEach((obj) => {
+      obj.classList.add("hidden");
+    });
+
+    loginText.forEach((e) => {
+      e.classList.remove("hidden");
+    });
+  }
+};
+
+displayLinks();
 
 bookBtn.addEventListener("click", () => {
   printBooks.innerHTML = "";
@@ -19,8 +43,7 @@ bookBtn.addEventListener("click", () => {
       let { url } = Cover.data.attributes;
       let { username, email } = user.data.attributes;
       let { Genre } = genre.data.attributes;
-      console.log(genre);
-      printBooks.innerHTML += `Titel: ${Title} Författare: ${Writer} Antal sidor: ${Pages} Betyg: ${Grade} Användare: ${username} ${email} Genre: ${Genre} <img src="http://localhost:1337${url}">`;
+      printBooks.innerHTML += ` <img src="http://localhost:1337${url}"> <br> Titel: ${Title} <br> Författare: ${Writer} <br> Antal sidor: ${Pages} <br> Betyg: ${Grade} <br> Användare: ${username} ${email} <br> Genre: ${Genre} <br><br><br><br>`;
     });
   });
 });
@@ -30,16 +53,14 @@ audioBookBtn.addEventListener("click", () => {
   printAudioBooks.innerHTML = "";
   getAudioBooks().then((data) => {
     const audioBooks = data.data;
-    console.log(audioBooks);
 
     audioBooks.forEach((audioBook) => {
       let { Title, Writer, length, Grade, Cover, releasedate, user } =
         audioBook.attributes;
       let { url } = Cover.data.attributes;
-      console.log(user);
 
       let { username, email } = user.data.attributes;
-      printAudioBooks.innerHTML += `Titel: ${Title} Författare: ${Writer} Längd: ${length} Betyg: ${Grade} Publicerad: ${releasedate} Användare: ${username} ${email} <img src="http://localhost:1337${url}">`;
+      printAudioBooks.innerHTML += `<img src="http://localhost:1337${url}"> <br> Titel: ${Title} <br> Författare: ${Writer} <br> Längd: ${length} <br> Betyg: ${Grade} <br> Publicerad: ${releasedate} <br> Användare: ${username} ${email} <br>`;
     });
   });
 });
@@ -81,7 +102,3 @@ const getAudioBooks = async () => {
   const data = await response.json();
   return data;
 };
-
-//login
-
-//register

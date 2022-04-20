@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>Publish books</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,21 +18,80 @@
       <h1>Publicera böcker</h1>
       <ul class="main-menu">
         <li>
-          <a href="index.html" class="nav-link">Startsida</a>
+          <a href="index.html" class="nav-link" style="text-decoration: none"
+            >Startsida</a
+          >
         </li>
         <li>
-          <a href="register.html" class="nav-link">Registrera dig</a>
+          <a
+            href="publish.html"
+            class="nav-link active"
+            style="text-decoration: none"
+            >Publicera en bok</a
+          >
         </li>
         <li>
-          <a href="publish.html" class="nav-link active">Publicera en bok</a>
+          <a href="myPage.html" class="nav-link" style="text-decoration: none"
+            >Min sida</a
+          >
         </li>
         <li>
-          <a href="myPage.html" class="nav-link">Min sida</a>
-        </li>
-        <li>
-          <a href="index.html" class="nav-link">Logga ut</a>
+          <a
+            href="index.html"
+            class="nav-link logout"
+            style="text-decoration: none"
+            >Logga ut</a
+          >
         </li>
       </ul>
     </header>
+    <button class="newBook buttons">Registrera ny bok</button>
+    <button class="newAudioBook buttons">Registrera ny ljudbok</button>
+    <div class="addBookWrapper hidden">
+      <label for="_title">Ange bokens titel:</label>
+      <input type="text" name="_title" id="_title" />
+      <label for="_author">Ange bokens författare:</label>
+      <input type="text" name="_author" id="_author" />
+      <select name="_genre" id="_genre">
+        <option value="null" disabled selected>Välj en genre</option>
+        <option value="7">Deckare</option>
+        <option value="5">Fantasy</option>
+        <option value="2">Humor</option>
+        <option value="1">Romantik</option>
+      </select>
+      <label for="_pages">Ange antal sidor:</label>
+      <input type="number" name="_pages" id="_pages" />
+      <label for="_rating">Ange bokens betyg:</label>
+      <input type="number" name="_rating" min="0" max="10" id="_rating" />
+      <label for="_image">Ladda upp bokens omslag:</label>
+      <input type="file" name="_image" id="_image" />
+      <button class="addBookBtn">Lägg till bok!</button>
+    </div>
+
+    <div class="addAudioBookWrapper hidden">
+      <label for="_title">Ange ljudbokens titel:</label>
+      <input type="text" name="_title" id="_TITLE" />
+      <label for="_author">Ange ljudbokens författare:</label>
+      <input type="text" name="_author" id="_AUTHOR" />
+      <select name="_genre" id="_GENRE">
+        <option value="null" disabled selected>Välj en genre</option>
+        <option value="7">Deckare</option>
+        <option value="5">Fantasy</option>
+        <option value="2">Humor</option>
+        <option value="1">Romantik</option>
+      </select>
+      <label for="length">Ange ljudbokens längd:</label>
+      <input type="number" name="length" id="_LENGTH" />
+      <label for="releasedate">Ange ljudbokens utgivningsdatum:</label>
+      <input type="number" name="releasedate" id="_RELEASEDATE" />
+      <label for="rating">Ange ljudbokens betyg:</label>
+      <input type="number" name="rating" min="0" max="10" id="_RATING" />
+      <label for="_image">Ladda upp bokens omslag:</label>
+      <input type="file" name="_image" id="_IMAGE" />
+      <button class="addAudioBookBtn">Lägg till ljudbok!</button>
+    </div>
+
+    <script src="publish.js"></script>
+    <script src="logout.js"></script>
   </body>
 </html>

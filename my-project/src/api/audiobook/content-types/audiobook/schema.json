@@ -53,6 +53,9 @@
       "relation": "manyToOne",
       "target": "api::genre.genre",
       "inversedBy": "audiobooks"
+    },
+    "userId": {
+      "type": "integer"
     }
   }
 }

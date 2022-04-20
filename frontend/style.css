@@ -1,16 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
 .header {
-  background-color: aqua;
+  background-color: rgb(84, 133, 94);
+  height: 70px;
 }
 
 .hidden {
   display: none;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .main-menu {
+  list-style-type: none;
   display: flex;
   flex-direction: row;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 15px;
+}
+
+.nav-link {
+  margin-left: 10px;
+  color: aliceblue;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.registerLink {
+  color: black;
+}
+
+.buttons {
+  border: 2px solid rgb(211, 209, 209);
+  color: gray;
+  padding: 0.2rem 0.4rem;
+  border-radius: 12px;
+  font-weight: bold;
+  height: 50px;
+  width: 200px;
+  margin-top: 50px;
+  margin-left: 16px;
+}
+
+.buttons:hover,
+.loginBtn:hover,
+.registerBtn:hover {
+  background: rgb(84, 133, 94);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
+  margin-top: 40px;
+}
+
+.books,
+.audiobooks {
+  margin: 1%;
+  width: 40vw;
+  height: 200px;
+  padding: 1.5%;
+  position: relative;
+}
+
+.bookWrapper,
+.audioBookWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 65vw;
+  align-items: center;
+}
+
+.linkWrapper {
+  margin-right: 10px;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginBtn,
+.registerBtn {
+  border: 2px solid rgb(211, 209, 209);
+  color: gray;
+  padding: 0.2rem 0.4rem;
+  border-radius: 12px;
+  font-weight: bold;
+  height: 30px;
+  width: 100px;
+  margin-top: 30px;
+  margin-left: 16px;
+}
+
+.headerImg {
+  height: 300px;
+  width: 100%;
 }
