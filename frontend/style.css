@@ -10,9 +10,14 @@
   background-color: rgb(84, 133, 94);
   height: 70px;
 }
-
+.header img {
+  position: relative;
+  z-index: -10;
+  filter: brightness(50%);
+  top: -5px;
+}
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .main-menu {
@@ -21,11 +26,16 @@
   flex-direction: row;
   margin-right: 15px;
   text-decoration: none;
+  justify-content: flex-end;
+  position: relative;
+  transform: translateY(-50%);
 }
 
 h1 {
   font-family: "Courier New", Courier, monospace;
   margin-left: 15px;
+  position: relative;
+  transform: translateY(45%);
 }
 
 .nav-link {
@@ -57,8 +67,12 @@ h1 {
 .loginBtn:hover,
 .registerBtn:hover {
   background: rgb(84, 133, 94);
-  color: whitesmoke;
+  color: rgb(214, 205, 205);
   cursor: pointer;
+}
+
+.loginBtn {
+  margin-bottom: 40px;
 }
 
 .active {
@@ -69,27 +83,48 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 90px;
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 .books,
 .audiobooks {
-  margin: 1%;
-  width: 40vw;
+  width: 100vw;
   height: 200px;
   padding: 1.5%;
-  position: relative;
+  margin: 1%;
+  flex-wrap: wrap;
+  margin-top: 200px;
+  justify-content: center;
 }
 
-.bookWrapper,
-.audioBookWrapper {
+.showAllBooks {
+  flex-wrap: wrap;
+  margin-top: 200px;
+  justify-content: center;
+}
+
+.allBooksWrapper img {
+  width: 150px;
+}
+
+.allBooksWrapper,
+.bookCardWrapper,
+.audioBookCardWrapper {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 65vw;
   align-items: center;
+  width: 250px;
+  margin-top: 80px;
+  margin-right: 10vw;
+  border: 1px solid rgb(190, 186, 186);
+  border-radius: 15px;
+  background-color: rgb(248, 241, 241);
 }
 
+.bookCardWrapper img,
+.audioBookCardWrapper img {
+  width: 200px;
+}
 .linkWrapper {
   margin-right: 10px;
 }
@@ -116,4 +151,137 @@ h1 {
 .headerImg {
   height: 300px;
   width: 100%;
+}
+
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 7px;
+  align-items: flex-start;
+  width: 50vw;
+  background-color: rgb(248, 241, 241);
+}
+
+.profileWrapper {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 60px;
+}
+
+.bookInfoWrapper {
+  display: flex;
+}
+
+.bookInfoWrapper img {
+  margin-left: 10px;
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(173, 168, 168);
+  border-radius: 0 7px 7px 0px;
+  align-items: flex-start;
+  width: 50vw;
+}
+
+.myBooksWrapper h2 {
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
+h5 {
+  margin-bottom: 10px;
+}
+
+.addBookWrapper,
+.addAudioBookWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  justify-content: center;
+}
+
+.addAllBooksWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.login_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.loginBtn {
+  margin-left: 44px;
+}
+
+.registerLink {
+  margin-left: 49px;
+}
+
+.registration {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.registerBtn {
+  margin-left: 42px;
+}
+
+.h2Wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.bookInfoWrap {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+img {
+  margin-top: 20px;
+}
+
+.bookInfoWrapper img {
+  margin-top: -1px;
+}
+
+.addAudioBookBtn,
+.addBookBtn {
+  margin-bottom: 30px;
+  margin-left: 60px;
 }

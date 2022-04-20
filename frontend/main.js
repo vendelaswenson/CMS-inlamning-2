@@ -6,6 +6,7 @@ const audioBookBtn = document.querySelector(".audioBookBtn");
 const allBooks = document.querySelector(".allBooks");
 const printBooks = document.querySelector(".books");
 const printAudioBooks = document.querySelector(".audiobooks");
+const printAllBooks = document.querySelector(".showAllBooks");
 const hiddenObj = document.querySelectorAll(".hidden");
 const loginText = document.querySelectorAll(".hide");
 
@@ -33,8 +34,10 @@ const displayLinks = () => {
 displayLinks();
 
 bookBtn.addEventListener("click", () => {
+  printBooks.style.display = "flex";
   printBooks.innerHTML = "";
   printAudioBooks.innerHTML = "";
+  printAllBooks.innerHTML = "";
   getBook().then((data) => {
     const books = data.data;
 
@@ -43,14 +46,16 @@ bookBtn.addEventListener("click", () => {
       let { url } = Cover.data.attributes;
       let { username, email } = user.data.attributes;
       let { Genre } = genre.data.attributes;
-      printBooks.innerHTML += ` <img src="http://localhost:1337${url}"> <br> Titel: ${Title} <br> Författare: ${Writer} <br> Antal sidor: ${Pages} <br> Betyg: ${Grade} <br> Användare: ${username} ${email} <br> Genre: ${Genre} <br><br><br><br>`;
+      printBooks.innerHTML += `<div class="bookCardWrapper"> <img src="http://localhost:1337${url}"> <br> <div class ="bookInfoWrap"> Titel: ${Title} <br> Författare: ${Writer} <br> Antal sidor: ${Pages} <br> Betyg: ${Grade} <br> Användare: ${username} ${email} <br> Genre: ${Genre} </div> </div>`;
     });
   });
 });
 
 audioBookBtn.addEventListener("click", () => {
-  printBooks.innerHTML = "";
+  printAudioBooks.style.display = "flex";
+  printBooks.style.display = "none";
   printAudioBooks.innerHTML = "";
+  printAllBooks.innerHTML = "";
   getAudioBooks().then((data) => {
     const audioBooks = data.data;
 
@@ -60,21 +65,23 @@ audioBookBtn.addEventListener("click", () => {
       let { url } = Cover.data.attributes;
 
       let { username, email } = user.data.attributes;
-      printAudioBooks.innerHTML += `<img src="http://localhost:1337${url}"> <br> Titel: ${Title} <br> Författare: ${Writer} <br> Längd: ${length} <br> Betyg: ${Grade} <br> Publicerad: ${releasedate} <br> Användare: ${username} ${email} <br>`;
+      printAudioBooks.innerHTML += `<div class="audioBookCardWrapper"> <img src="http://localhost:1337${url}"> <br> <div class ="bookInfoWrap"> Titel: ${Title} <br> Författare: ${Writer} <br> Längd: ${length} <br> Betyg: ${Grade} <br> Publicerad: ${releasedate} <br> Användare: ${username} ${email} </div> </div>`;
     });
   });
 });
 
 allBooks.addEventListener("click", () => {
-  printBooks.innerHTML = "";
-  printAudioBooks.innerHTML = "";
+  printAllBooks.style.display = "flex";
+  printBooks.style.display = "none";
+  printAudioBooks.style.display = "none";
+  printAllBooks.innerHTML = "";
   getBook().then((data) => {
     const books = data.data;
     books.forEach((book) => {
       let { Title, Writer, Pages, Grade, Cover, user } = book.attributes;
       let { url } = Cover.data.attributes;
       let { username, email } = user.data.attributes;
-      printBooks.innerHTML += `Titel: ${Title} Författare: ${Writer} Antal sidor: ${Pages} Betyg: ${Grade} Användare: ${username} ${email} <img src="http://localhost:1337${url}">`;
+      printAllBooks.innerHTML += `<div class="allBooksWrapper"> <img src="http://localhost:1337${url}"> <br> <div class ="bookInfoWrap"> Titel: ${Title} <br> Författare: ${Writer} <br> Antal sidor: ${Pages} <br> Betyg: ${Grade} <br> Användare: ${username} ${email} </div>  </div>`;
     });
   });
   getAudioBooks().then((data2) => {
@@ -84,7 +91,7 @@ allBooks.addEventListener("click", () => {
         audioBook.attributes;
       let { url } = Cover.data.attributes;
       let { username, email } = user.data.attributes;
-      printAudioBooks.innerHTML += `Titel: ${Title} Författare: ${Writer} Längd: ${length} Betyg: ${Grade} Publicerad: ${releasedate} Användare: ${username} ${email} <img src="http://localhost:1337${url}">`;
+      printAllBooks.innerHTML += `<div class="allBooksWrapper"> <img src="http://localhost:1337${url}"> <br> <div class ="bookInfoWrap"> Titel: ${Title} Författare: ${Writer} Längd: ${length} Betyg: ${Grade} Publicerad: ${releasedate} Användare: ${username} ${email} </div> </div>`;
     });
   });
 });

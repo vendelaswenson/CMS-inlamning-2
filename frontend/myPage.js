@@ -22,17 +22,9 @@ const myProfileComponent = (username, email, id, createdAt) => `
         </div>
 `;
 
-const personalBookComponent = (
-  Title,
-  Writer,
-  Pages,
-  Grade,
-  Cover,
-  name,
-  genre
-) => `
-<div class="bookInfoWrapper">
-        <img src="http://localhost:1337${Cover}" alt="${name}">
+const personalBookComponent = (Title, Writer, Pages, Grade, Cover, genre) =>
+  `<div class="bookInfoWrapper">
+        <img src="http://localhost:1337${Cover}" alt="${Title}">
         <div class="bookInfo">
             <h2>${Title}</h2>
             <h3>Författare: ${Writer}</h3>
@@ -89,7 +81,7 @@ let myProfile = async () => {
           let { Genre } = genre.data.attributes;
           let { data: imgData } = Cover;
           let { attributes: imgAttributes } = imgData;
-          let { url: name } = imgAttributes;
+          let { url: imgName } = imgAttributes;
 
           if (id == bookUserId) {
             myBooks.innerHTML += personalBookComponent(
@@ -97,10 +89,8 @@ let myProfile = async () => {
               Writer,
               Pages,
               Grade,
-              Cover,
-              name,
-              Genre,
-              BookDelId
+              imgName,
+              Genre
             );
           }
         });
