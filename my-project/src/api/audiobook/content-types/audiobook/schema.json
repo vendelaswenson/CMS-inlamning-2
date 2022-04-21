@@ -20,10 +20,6 @@
       "type": "string",
       "required": true
     },
-    "releasedate": {
-      "required": true,
-      "type": "date"
-    },
     "Grade": {
       "type": "integer",
       "max": 10
@@ -39,9 +35,6 @@
         "audios"
       ]
     },
-    "length": {
-      "type": "time"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
@@ -56,6 +49,12 @@
     },
     "userId": {
       "type": "integer"
+    },
+    "releasedate": {
+      "type": "string"
+    },
+    "length": {
+      "type": "decimal"
     }
   }
 }

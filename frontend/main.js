@@ -45,8 +45,7 @@ bookBtn.addEventListener("click", () => {
       let { Title, Writer, Pages, Grade, Cover, user, genre } = book.attributes;
       let { url } = Cover.data.attributes;
       let { username, email } = user.data.attributes;
-      let { Genre } = genre.data.attributes;
-      printBooks.innerHTML += `<div class="bookCardWrapper"> <img src="http://localhost:1337${url}"> <br> <div class ="bookInfoWrap"> Titel: ${Title} <br> Författare: ${Writer} <br> Antal sidor: ${Pages} <br> Betyg: ${Grade} <br> Användare: ${username} ${email} <br> Genre: ${Genre} </div> </div>`;
+      printBooks.innerHTML += `<div class="bookCardWrapper"> <img src="http://localhost:1337${url}"> <br> <div class ="bookInfoWrap"> Titel: ${Title} <br> Författare: ${Writer} <br> Antal sidor: ${Pages} <br> Betyg: ${Grade} <br> Användare: ${username} ${email} <br> Genre: ${genre} </div> </div>`;
     });
   });
 });
